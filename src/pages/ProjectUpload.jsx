@@ -10,6 +10,8 @@ import FinalCheckComponent from "../components/ProjectForm/FinalCheckComponent";
 
 export const UploadProject = () => {
   const [projectId, setProjectId] = useState('');
+  const [projectType, setProjectType] = useState('');
+
   const [currentStep, setCurrentStep] = useState(1);
 
   // Function to go to the next step
@@ -26,17 +28,17 @@ export const UploadProject = () => {
   const renderStep = () => {
     switch (currentStep) {
       case 1:
-        return <BasicTextProject setProjectId={setProjectId} nextStep={nextStep}/>;
+        return <BasicTextProject setProjectId={setProjectId} setProjectType={setProjectType} nextStep={nextStep}/>;
       case 2:
         return <ImageUploadProject projectId={projectId} nextStep={nextStep}/>;
       case 3:
         return <BrochureProject projectId={projectId} nextStep={nextStep}/>;
       case 4:
-        return <PropertyUnitStack projectId={projectId} nextStep={nextStep}/>;
+        return projectType === "project" ? <PropertyUnitStack projectId={projectId} nextStep={nextStep}/> : nextStep();
       case 5:
-        return <AmenitiesForm projectId={projectId} nextStep={nextStep}/>;
+        return projectType !== 'land' ? <AmenitiesForm projectId={projectId} nextStep={nextStep}/> : nextStep() ;
       case 6:
-        return <FinalCheckComponent projectId={projectId} />;
+        return <FinalCheckComponent projectId={projectId} projectType={projectType}/>;
       default:
         return <BasicTextProject setProjectId={setProjectId} />;
     }

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import apiClient from '../../apis/axios';
 import { useNavigate } from 'react-router-dom';
 
-const FinalCheckComponent = ({ projectId }) => {
+const FinalCheckComponent = ({ projectId, projectType }) => {
 
   const navigate = useNavigate()
   const [projectData, setProjectData] = useState(null); // State to store project data
@@ -28,10 +28,10 @@ const FinalCheckComponent = ({ projectId }) => {
     // Example validations (add more as needed)
     if (!data.name || data.name.trim() === '') errors.push('Project name is missing.');
     if (!data.description || data.description.trim() === '') errors.push('Project description is missing.');
-    if (!data.amenities || data.amenities.length === 0) errors.push('Amenities are not selected.');
+    if ( projectType !== 'land'  && (!data.amenities || data.amenities.length === 0)) errors.push('Amenities are not selected.');
     if (!data.images || data.images.length === 0) errors.push('No project images uploaded.');
     if (!data.brochure) errors.push('Project brochure is missing.');
-    if (!data.units) errors.push('property units is missing.');
+    if (projectType === 'project' && !data.units) errors.push('property units is missing.');
 
     setValidationErrors(errors);
   };

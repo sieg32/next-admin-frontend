@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import apiClient from "../../apis/axios";
-export const BasicTextProject=({setProjectId , nextStep})=>{
+export const BasicTextProject=({setProjectId ,setProjectType, nextStep})=>{
 
     
     const {
@@ -27,6 +27,8 @@ export const BasicTextProject=({setProjectId , nextStep})=>{
         if(response.status === 201 ){
             
             setProjectId(response.data.data.project_id)
+            setProjectType(response.data.data.type);
+          
             nextStep()
         }
        } catch (error) {
