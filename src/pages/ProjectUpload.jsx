@@ -12,7 +12,7 @@ export const UploadProject = () => {
   const [projectId, setProjectId] = useState('');
   const [projectType, setProjectType] = useState('');
 
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(4);
 
   // Function to go to the next step
   const nextStep = () => {
@@ -34,7 +34,7 @@ export const UploadProject = () => {
       case 3:
         return <BrochureProject projectId={projectId} nextStep={nextStep}/>;
       case 4:
-        return projectType === "project" ? <PropertyUnitStack projectId={projectId} nextStep={nextStep}/> : nextStep();
+        return projectType !== "land" ? <PropertyUnitStack projectId={projectId} nextStep={nextStep}/> : nextStep();
       case 5:
         return projectType !== 'land' ? <AmenitiesForm projectId={projectId} nextStep={nextStep}/> : nextStep() ;
       case 6:

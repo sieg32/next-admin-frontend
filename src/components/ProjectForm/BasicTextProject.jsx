@@ -15,7 +15,7 @@ export const BasicTextProject=({setProjectId ,setProjectType, nextStep})=>{
       const categoryOptions = {
         project: ["Residential", "Commercial"],
         land: ["Lease", "Sale"],
-        hotel: ["Rent", "Sale"],
+        hotel: ["Rent", "Sale", "Lease"],
       };
     
       const onSubmit = async (data) => {
@@ -213,6 +213,17 @@ export const BasicTextProject=({setProjectId ,setProjectType, nextStep})=>{
 
 
 
+        <div className="mb-4">
+          <label className="block text-gray-600 font-medium mb-2">RERA ID</label>
+          <input
+            {...register("rera_id")}
+            className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            
+          />
+        </div>
+
+
+
 
 
         {/* land extra */}
@@ -225,6 +236,16 @@ export const BasicTextProject=({setProjectId ,setProjectType, nextStep})=>{
               className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="approach road"
             />
+            <input
+              {...register("land_extra.fencing")}
+              className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="fencing"
+            />
+            <input
+              {...register("land_extra.position")}
+              className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="position"
+            />
                 
             <input
               {...register("land_extra.distance_form_orr")}
@@ -235,6 +256,52 @@ export const BasicTextProject=({setProjectId ,setProjectType, nextStep})=>{
               {...register("land_extra.soil_type")}
               className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="soil type"
+            />
+          </div>
+        </fieldset>}
+
+        <div className="mb-4">
+          <label className="block text-gray-600 font-medium mb-2">Why us</label>
+          <textarea
+            {...register("why_us")}
+            className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            
+          ></textarea>
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-600 font-medium mb-2">properties list</label>
+          <input
+            {...register("project_properties")}
+            className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="total no. of building in a project"
+          ></input>
+        </div>
+
+
+
+        {type==='hotel' &&
+        <fieldset className="mb-4">
+          <legend className="block text-gray-600 font-medium mb-2">Hotel extra</legend>
+          <div className="grid grid-cols-2 gap-4">
+            <input
+              {...register("hotel_extra.rental_yield")}
+              className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                type="number"
+                placeholder="rental  yield (in percent)"
+            />
+                
+            
+            <input
+              {...register("hotel_extra.accessibility")}
+              className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="wheel chair access available"
+            />
+
+            <input
+              {...register("hotel_extra.additional_room")}
+              className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="additional rooms"
             />
           </div>
         </fieldset>}
