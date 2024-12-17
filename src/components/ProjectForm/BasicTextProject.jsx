@@ -119,6 +119,8 @@ export const BasicTextProject=({setProjectId ,setProjectType, nextStep})=>{
                 <option  value={"indore"}>Indore</option>
                 <option  value={"bhopal"}>Bhopal</option>
                 <option  value={"pune"}>Pune</option>
+                <option  value={"chandigarh"}>Pune</option>
+                <option  value={"noida"}>Pune</option>
             </select>
             <input
               {...register("location.state", {required: 'state is required'})}

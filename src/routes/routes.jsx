@@ -4,6 +4,7 @@ import HomePage from "../pages/HomePage";
 import ProtectedRoute from "../components/ProtectedRoutes";
 import ErrorPage from "../components/ErrorPage";
 import { UploadProject } from "../pages/ProjectUpload";
+import { ProjectEdit } from "../pages/ProjectEdit";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,12 @@ const router = createBrowserRouter([
         path:'upload',
         element: <ProtectedRoute><UploadProject /></ProtectedRoute>,
         errorElement: <ErrorPage />,
+      },
+      {
+        path:'edit/:projectId',
+        element: <ProtectedRoute><ProjectEdit /></ProtectedRoute>,
+        errorElement: <ErrorPage />,
+        
       },
 
     ]
