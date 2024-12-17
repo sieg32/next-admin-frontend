@@ -12,7 +12,7 @@ export const UploadProject = () => {
   const [projectId, setProjectId] = useState('');
   const [projectType, setProjectType] = useState('');
 
-  const [currentStep, setCurrentStep] = useState(4);
+  const [currentStep, setCurrentStep] = useState(1);
 
   // Function to go to the next step
   const nextStep = () => {
