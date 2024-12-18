@@ -30,7 +30,7 @@ const FinalCheckComponent = ({ projectId, projectType }) => {
     if (!data.description || data.description.trim() === '') errors.push('Project description is missing.');
     if ( projectType !== 'land'  && (!data.amenities || data.amenities.length === 0)) errors.push('Amenities are not selected.');
     if (!data.images || data.images.length === 0) errors.push('No project images uploaded.');
-    if (!data.brochure) errors.push('Project brochure is missing.');
+    if (projectType !== 'land' && !data.brochure) errors.push('Project brochure is missing.');
     if (projectType === 'project' && !data.units) errors.push('property units is missing.');
 
     setValidationErrors(errors);
