@@ -118,7 +118,7 @@ export const BasicTextProject=({setProjectId ,setProjectType, nextStep})=>{
             >
                 <option  value={"indore"}>Indore</option>
                 <option  value={"bhopal"}>Bhopal</option>
-                <option  value={"pune"}>Pune</option>
+                <option  value={"lucknow"}>Lucknow</option>
                 <option  value={"chandigarh"}>Chandigar</option>
                 <option  value={"noida"}>Noida</option>
             </select>
