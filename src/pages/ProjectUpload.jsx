@@ -32,7 +32,7 @@ export const UploadProject = () => {
       case 2:
         return <ImageUploadProject projectId={projectId} nextStep={nextStep}/>;
       case 3:
-        return projectType !== 'land' ? <BrochureProject projectId={projectId} nextStep={nextStep} />: nextStep();
+        return projectType === 'project' ? <BrochureProject projectId={projectId} nextStep={nextStep} />: nextStep();
       case 4:
         return projectType !== "land" ? <PropertyUnitStack projectId={projectId} nextStep={nextStep}/> : nextStep();
       case 5:
