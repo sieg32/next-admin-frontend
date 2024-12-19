@@ -120,7 +120,10 @@ export const BasicTextProject=({setProjectId ,setProjectType, nextStep})=>{
                 <option  value={"bhopal"}>Bhopal</option>
                 <option  value={"lucknow"}>Lucknow</option>
                 <option  value={"chandigarh"}>Chandigar</option>
-                <option  value={"noida"}>Noida</option>
+                <option  value={"jabalpur"}>jabalpur</option>
+                <option  value={"shimla"}>shimla</option>
+                <option  value={"vidisha"}>vidisha</option>
+                <option  value={"dahna"}>dahna</option>
             </select>
             <input
               {...register("location.state", {required: 'state is required'})}
