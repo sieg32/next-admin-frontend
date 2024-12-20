@@ -155,7 +155,7 @@ const ProjectBox = ({id, name, type, slug, description, is_public, images, setDe
       <div key={id} className="relative border p-1 md:p-3 rounded shadow-sm hover:shadow-lg">
         <div className={`absolute right-0 top-0 rounded-xl p-2 ${is_public ? 'bg-green-400' :'bg-gray-200' }`}>{is_public? 'public' : 'draft'}</div>
         <div className=" h-40 lg:h-60 w-full bg-gray-200 rounded-lg mb-2 overflow-hidden">
-          <a  href={`https://deals.nextopson.in/${type}/details/${slug}`}>
+          <a  href={`https://deals.nextopson.in/${type}s/details/${slug}`}>
 
           <img src={images[0]?.image_url || noImg} alt="" className="w-full h-full object-cover  " />
           </a>
