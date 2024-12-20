@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import apiClient from "../apis/axios";
-import {useNavigate} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import noImg from "./../assets/noImg.png";
 
 const HomePage = () => {
@@ -148,12 +148,17 @@ const HomePage = () => {
   );
 };
 
-const ProjectBox = ({id, name, type, description, images, setDeleteId}) => {
+const ProjectBox = ({id, name, type, slug, description, is_public, images, setDeleteId}) => {
+ 
   return (
     <>
-      <div key={id} className="border p-1 md:p-3 rounded shadow-sm hover:shadow-lg">
+      <div key={id} className="relative border p-1 md:p-3 rounded shadow-sm hover:shadow-lg">
+        <div className={`absolute right-0 top-0 rounded-xl p-2 ${is_public ? 'bg-green-400' :'bg-gray-200' }`}>{is_public? 'public' : 'draft'}</div>
         <div className=" h-40 lg:h-60 w-full bg-gray-200 rounded-lg mb-2 overflow-hidden">
+          <a  href={`https://deals.nextopson.in/${type}/details/${slug}`}>
+
           <img src={images[0]?.image_url || noImg} alt="" className="w-full h-full object-cover  " />
+          </a>
         </div>
         <h2 className="text-lg font-bold">{name}</h2>
         <h3>Type - {type.toUpperCase()}</h3>

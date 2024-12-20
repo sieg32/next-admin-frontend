@@ -123,7 +123,7 @@ export const BasicTextProject=({setProjectId ,setProjectType, nextStep})=>{
                 <option  value={"jabalpur"}>jabalpur</option>
                 <option  value={"shimla"}>shimla</option>
                 <option  value={"vidisha"}>vidisha</option>
-                <option  value={"dahna"}>dahna</option>
+               
             </select>
             <input
               {...register("location.state", {required: 'state is required'})}
@@ -140,13 +140,13 @@ export const BasicTextProject=({setProjectId ,setProjectType, nextStep})=>{
               className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Address"
             />
-            <input
+            <input step={'0.000001'}
               {...register("location.coordinates.latitude", { valueAsNumber: true })}
               className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Latitude"
               type="number"
             />
-            <input
+            <input step={'0.000001'}
               {...register("location.coordinates.longitude", { valueAsNumber: true })}
               className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Longitude"
@@ -209,7 +209,7 @@ export const BasicTextProject=({setProjectId ,setProjectType, nextStep})=>{
           {/* project area */}
         <div className="mb-4">
           <label className="block text-gray-600 font-medium mb-2">project area in acres</label>
-          <input
+          <input step={'0.01'}
             {...register("project_area", { valueAsNumber: true })}
             className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             type="number"

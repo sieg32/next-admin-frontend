@@ -38,7 +38,7 @@ console.log(amenities)
   const handleSubmit=async()=>{
     try {
       console.log(selectedAmenities)
-      const response = apiClient.post(`/project/amenities/${projectId}`,{amenities:selectedAmenities} )
+      const response =await apiClient.post(`/project/amenities/${projectId}`,{amenities:selectedAmenities} )
       console.log(response.data)
       nextStep()
     } catch (error) {
