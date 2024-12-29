@@ -7,6 +7,7 @@ import BrochureProject from "../components/ProjectForm/BrochureProject";
 import PropertyUnitStack from "../components/ProjectForm/PropertyUnitStack";
 import AmenitiesForm from "../components/ProjectForm/AmenitiesForm";
 import FinalCheckComponent from "../components/ProjectForm/FinalCheckComponent";
+import { RemarkForm } from "../components/ProjectForm/remarkForm";
 
 export const UploadProject = () => {
   const [projectId, setProjectId] = useState('');
@@ -16,7 +17,7 @@ export const UploadProject = () => {
 
   // Function to go to the next step
   const nextStep = () => {
-    if (currentStep < 6) setCurrentStep(currentStep + 1);
+    if (currentStep < 7) setCurrentStep(currentStep + 1);
   };
 
   // Function to go to the previous step
@@ -38,6 +39,9 @@ export const UploadProject = () => {
       case 5:
         return projectType !== 'land' ? <AmenitiesForm projectId={projectId} nextStep={nextStep}/> : nextStep() ;
       case 6:
+        return <RemarkForm projectId={projectId} projectType={projectType} nextStep={nextStep}/>;
+      
+      case 7:
         return <FinalCheckComponent projectId={projectId} projectType={projectType}/>;
       default:
         return <BasicTextProject setProjectId={setProjectId} />;
@@ -54,6 +58,7 @@ export const UploadProject = () => {
           <Step label="Brochure" />
           <Step label="Property Units" />
           <Step label="Amenities" />
+          <Step label="remarks" />
           <Step label="Final check" />
 
         </Stepper>
