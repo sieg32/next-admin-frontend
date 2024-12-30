@@ -111,20 +111,13 @@ export const BasicTextProject=({setProjectId ,setProjectType, nextStep})=>{
         <fieldset className="mb-4">
           <legend className="block text-gray-600 font-medium mb-2">Location</legend>
           <div className="grid grid-cols-2 gap-4">
-            <select
+            <input
               {...register("location.city", {required:'city is required'})}
               className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              
+              placeholder="state"
             >
-                <option  value={"indore"}>Indore</option>
-                <option  value={"bhopal"}>Bhopal</option>
-                <option  value={"lucknow"}>Lucknow</option>
-                <option  value={"chandigarh"}>Chandigar</option>
-                <option  value={"jabalpur"}>jabalpur</option>
-                <option  value={"shimla"}>shimla</option>
-                <option  value={"vidisha"}>vidisha</option>
                
-            </select>
+            </input>
             <input
               {...register("location.state", {required: 'state is required'})}
               className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -277,7 +270,7 @@ export const BasicTextProject=({setProjectId ,setProjectType, nextStep})=>{
         <div className="mb-4">
           <label className="block text-gray-600 font-medium mb-2">properties list</label>
           <input
-            {...register("project_properties")}
+            {...register("project_property")}
             className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="total no. of building in a project"
           ></input>
