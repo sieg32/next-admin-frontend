@@ -114,7 +114,7 @@ export const BasicTextProject=({setProjectId ,setProjectType, nextStep})=>{
             <input
               {...register("location.city", {required:'city is required'})}
               className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="state"
+              placeholder="city"
             >
                
             </input>
